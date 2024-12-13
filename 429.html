@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>429</title>
+</head>
+<body>
+    <script>
+        let array = new Array(10);
+        let arrayProcesado = rellenaYOrdena(array);
+        console.log(array)
+        function rellenaYOrdena(array){
+            // Rellenamos el array de numeros aleatorios hasta el 100
+            for (let i = 0; i < array.length; i++) {
+                array[i] = Math.floor(Math.random() * 100);
+            }
+            // Los ordenamos poniendo los que acaban en 0 al principio guardandolo en un array auxiliar
+            let arraux = [];
+            for (let i = 0; i < array.length; i++) {
+                if(array[i] == 0 || array[i] % 10 == 0){
+                    arraux.unshift(array[i]);
+                } else {
+                    arraux.pop(array[i]);
+                }
+            };
+            // Devolvemos el resultado;
+            return arraux;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>430</title>
+</head>
+<body>
+    <script>
+        let num1 = 7;
+        let num2 = 4;
+
+        isPrimo(num1);
+        isPrimo(num2);
+
+        function isPrimo(num){
+            // Definicion de variable auxiliar para contar cuantos números divisibles tiene el número pasado por parametro.
+            let count = 0;
+
+            // Contamos desde el número hasta 0 buscando el modulo de ese número
+            for (let index = num; index > 0; index--) {
+                if(num % index == 0){
+                    // Si el módulo del número es 0 añadimos una iteracion al count.
+                    count++;
+                }            
+            }
+            if(count > 2){
+                // Si hay mas de 2 iteraciones el número no es primo
+                console.log(`El número ${num} no es primo`);
+            } else {
+                // Si hay 2 o menos iteraciones el número es primo
+                console.log(`El número ${num} es primo`);
+            }
+        }
+    </script>
+</body>
+</html>
